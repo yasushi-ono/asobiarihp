@@ -258,6 +258,78 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* ===== HERO: Speech bubble (PC) ===== */
+    .hero-bubble {
+      position: absolute;
+      top: 16%;
+      right: 6%;
+      background: #fff;
+      color: #1a1a1a;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      z-index: 20;
+      opacity: 0;
+      animation: hero-bubble-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards, hero-bubble-float 3s ease-in-out 2.4s infinite;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      pointer-events: auto;
+    }
+    .hero-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 30%;
+      width: 0; height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 14px solid #fff;
+    }
+    .hero-bubble:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+    .hero-bubble-icon {
+      display: inline-block;
+      margin-left: 8px;
+      animation: hero-bubble-tap 1.2s ease-in-out infinite;
+    }
+    @keyframes hero-bubble-tap {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-3px) scale(1.15); }
+    }
+    @keyframes hero-bubble-in {
+      0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes hero-bubble-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* ===== HERO: Text CTA (Mobile) ===== */
+    .hero-text-cta {
+      display: none;
+      margin-top: 32px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: hero-up 1s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      padding-bottom: 6px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .hero-text-cta:hover {
+      border-bottom-color: #fff;
+      transform: translateX(4px);
+    }
+
     .scroll-hint {
       position: absolute;
       bottom: 32px; right: 48px;
@@ -315,10 +387,11 @@
     }
     .problems-title .red { color: var(--red); }
     .problems-lead {
-      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-size: clamp(1.4rem, 3vw, 2rem);
       font-weight: 900;
-      line-height: 1.5;
-      margin-bottom: 40px;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      white-space: nowrap;
     }
     .problems-lead .kw { color: var(--red); }
 
@@ -1110,6 +1183,8 @@
         background: rgba(0,0,0,0.6);
       }
       .hero-copy h1 { font-size: clamp(2rem, 7vw, 3.5rem); }
+      .hero-bubble { display: none; }
+      .hero-text-cta { display: inline-block; }
       .seed-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .vmp-grid { grid-template-columns: 1fr; gap: 0; }
       .seed-catalog, .make-seed, .story-section, .philosophy-section,
@@ -1143,7 +1218,7 @@
       /* Problems */
       .problems { border-radius: 24px 24px 0 0; }
       .problems-title { font-size: 1.5rem; margin-bottom: 32px; }
-      .problems-lead { font-size: 1.1rem; margin-bottom: 28px; }
+      .problems-lead { font-size: 1.1rem; margin-bottom: 12px; }
       .problem-box { padding: 28px 16px; }
       .problem-word { font-size: 1.15rem; }
 
@@ -1203,6 +1278,7 @@
     @media (max-width: 380px) {
       .hero-copy h1 { font-size: 1.4rem; }
       .problems-title { font-size: 1.3rem; }
+      .problems-lead { font-size: 0.95rem; }
       .solution-headline { font-size: 1.3rem; }
       .cta-title { font-size: 1.3rem; }
       .cta-btn { padding: 16px 28px; font-size: 0.9rem; }
@@ -1275,6 +1351,7 @@
   <!-- LEFT: Fixed panel (character) -->
   <div class="left-panel" id="leftPanel">
     <img src="images/character_v2.png" alt="asobiari">
+    <a href="javascript:void(0)" class="hero-bubble" onclick="openModal('https://wrld.asobiari.com/')">世界観、診断してみる？<span class="hero-bubble-icon">👆</span></a>
   </div>
 
 
@@ -1304,6 +1381,7 @@
             <span class="hero-line hero-line1">ビジネスに</span>
             <span class="hero-line hero-line2">世界観を。</span>
           </h1>
+          <a href="javascript:void(0)" class="hero-text-cta" onclick="openModal('https://wrld.asobiari.com/')">あなたのビジネスの世界観は？ →</a>
         </div>
         <div class="scroll-hint">SCROLL</div>
       </section>
@@ -1313,8 +1391,8 @@
         <div class="fs-inner">
           <div class="reveal">
             <p class="solution-eyebrow">PROBLEM</p>
-            <h2 class="problems-title">こんな<span class="red">お悩み</span>ありませんか？</h2>
-            <p class="problems-lead">あなたのビジネスの<span class="kw">"らしさ"</span>が</p>
+            <p class="problems-lead">あなたのビジネス<span class="kw">"らしさ"</span>に</p>
+            <h2 class="problems-title">こんなこと<span class="red">感じて</span>ませんか？</h2>
           </div>
           <div class="problem-grid reveal" style="transition-delay:0.15s">
             <div class="problem-box">

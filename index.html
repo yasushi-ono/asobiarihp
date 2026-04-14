@@ -1351,7 +1351,7 @@
   <!-- LEFT: Fixed panel (character) -->
   <div class="left-panel" id="leftPanel">
     <img src="images/character_v2.png" alt="asobiari">
-    <a href="javascript:void(0)" class="hero-bubble" onclick="openModal('https://wrld.asobiari.com/')">世界観、診断してみる？<span class="hero-bubble-icon">👆</span></a>
+    <a href="javascript:void(0)" class="hero-bubble" id="heroBubble" onclick="openModal('https://wrld.asobiari.com/')"><span class="hero-bubble-text">世界観、診断してみる？</span><span class="hero-bubble-icon">👆</span></a>
   </div>
 
 
@@ -1827,9 +1827,24 @@
     const leftPanel = document.getElementById('leftPanel');
     let isFlipping = false;
 
+    /* ===== HERO BUBBLE: text & link per page ===== */
+    const heroBubble = document.getElementById('heroBubble');
+    const heroBubbleText = heroBubble && heroBubble.querySelector('.hero-bubble-text');
+    function setBubbleFront() {
+      if (!heroBubble) return;
+      heroBubbleText.textContent = '世界観、診断してみる？';
+      heroBubble.onclick = function() { openModal('https://wrld.asobiari.com/'); };
+    }
+    function setBubbleBack() {
+      if (!heroBubble) return;
+      heroBubbleText.textContent = '物語、遊んでみない？';
+      heroBubble.onclick = function() { openModal('https://arianvlg.asobiari.com/'); };
+    }
+
     function flipToBack() {
       if (isFlipping) return;
       isFlipping = true;
+      setBubbleBack();
       pageFront.classList.add('flip-out');
       /* left-panel & backdrop stay visible on both pages */
 
@@ -1859,6 +1874,7 @@
     function flipToFront() {
       if (isFlipping) return;
       isFlipping = true;
+      setBubbleFront();
       pageBack.classList.add('flip-out');
 
       pageBack.addEventListener('animationend', function handler() {

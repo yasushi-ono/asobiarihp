@@ -13,8 +13,8 @@
     gtag('config', 'G-4MDY90PE7S');
   </script>
   <title>株式会社アソビアリ | 世界観を核にビジネスをIPとしてプロデュース</title>
-  <meta name="description" content="株式会社アソビアリは、アニメ・マンガ・ゲームのノウハウを活用し、あなたのビジネスの世界観をつくるIPプロデュース会社です。ビジネスの"らしさ"を言語化し、届く・選ばれる・愛されるブランドへ。無料の世界観診断も実施中。">
-  <meta name="keywords" content="アソビアリ,世界観,IPプロデュース,ブランディング,ビジネス世界観,世界観デザイン,ブランデッドキャラクター,ドラマチック思考">
+  <meta name="description" content="売上不振の背景にある「世界観の不在」。株式会社アソビアリは、アニメ・マンガ・ゲームのノウハウで世界観を設計し、ビジネスをIP化。戦略・現場・顧客体験を一本筋に。無料の世界観診断・レポート公開中。">
+  <meta name="keywords" content="アソビアリ,世界観,IPプロデュース,ブランディング,ビジネス世界観,世界観デザイン,ブランデッドキャラクター,ドラマチック思考,売上不振,ブランド戦略,ブランド再構築,経営課題,企業ブランディング,選ばれる会社">
   <link rel="canonical" href="https://asobiari.com/">
 
   <!-- Favicon -->
@@ -25,7 +25,7 @@
 
   <!-- OGP -->
   <meta property="og:title" content="株式会社アソビアリ | 世界観を核にビジネスをIPとしてプロデュース">
-  <meta property="og:description" content="アニメ・マンガ・ゲームのノウハウを活用して、あなたのビジネスの世界観をつくります。届く・選ばれる・愛されるブランドへ。">
+  <meta property="og:description" content="売上不振の背景にある「世界観の不在」。アニメ・マンガ・ゲームのノウハウで世界観を設計し、ビジネスをIP化。届く・選ばれる・愛されるブランドへ。">
   <meta property="og:image" content="https://asobiari.com/images/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -38,7 +38,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="株式会社アソビアリ | 世界観を核にビジネスをIPとしてプロデュース">
-  <meta name="twitter:description" content="アニメ・マンガ・ゲームのノウハウで、あなたのビジネスの世界観をつくります。">
+  <meta name="twitter:description" content="売上不振の背景にある「世界観の不在」。アニメ・マンガ・ゲームのノウハウで世界観を設計し、ビジネスをIP化。">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/yasushi-ono/asobiarihp/main/images/ogp.jpg">
 
   <!-- Structured Data -->
@@ -55,7 +55,7 @@
       "@type": "Person",
       "name": "小野靖"
     },
-    "description": "世界観を核に、あらゆるビジネスをIPとして設計しプロデュースする会社。アニメ・マンガ・ゲームのノウハウを活用した世界観デザイン・IPプロデュース・ブランド共創。",
+    "description": "売上不振の背景にある「世界観の不在」を解消し、世界観を核にビジネスをIPとして設計・プロデュースする会社。アニメ・マンガ・ゲームのノウハウを活用した世界観デザイン・IPプロデュース・ブランド共創により、戦略・現場・顧客体験を一本筋に。",
     "sameAs": [],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -330,6 +330,44 @@
       transform: translateX(4px);
     }
 
+    /* ===== HERO: Report pill button ===== */
+    .hero-sub-report {
+      display: inline-block;
+      margin-top: 28px;
+      color: #fff;
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      opacity: 0;
+      animation: hero-up 1s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      padding: 14px 32px;
+      border: 2px solid rgba(255,255,255,0.85);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(4px);
+    }
+    .hero-sub-report:hover {
+      background: #fff;
+      color: #1a1a1a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(255,255,255,0.2);
+    }
+    .hero-sub-report:hover .hero-sub-report-arrow {
+      color: var(--red);
+    }
+    .hero-sub-report-arrow {
+      display: inline-block;
+      margin-left: 12px;
+      font-size: 0.95rem;
+      color: var(--red-bright);
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
     .scroll-hint {
       position: absolute;
       bottom: 32px; right: 48px;
@@ -545,6 +583,38 @@
     }
     .benefit-step:hover .benefit-step-desc {
       color: var(--text);
+    }
+    .benefit-report-link {
+      display: inline-block;
+      margin-top: 28px;
+      color: var(--red);
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 14px 32px;
+      border: 2px solid var(--red);
+      border-radius: 999px;
+      background: #fff;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(224,16,32,0.12);
+    }
+    .benefit-report-link:hover {
+      background: var(--red);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(224,16,32,0.3);
+    }
+    .benefit-report-link:hover .benefit-report-arrow {
+      color: #fff;
+    }
+    .benefit-report-arrow {
+      display: inline-block;
+      margin-left: 10px;
+      color: var(--red);
+      font-weight: 900;
+      transition: color 0.3s ease;
     }
 
     /* ===== CTA ===== */
@@ -1345,6 +1415,18 @@
     </div>
   </div>
 
+  <!-- REPORT MODAL -->
+  <div class="pp-overlay" id="reportModalOverlay" onclick="closeReportModal(event)">
+    <div class="pp-modal" style="max-width:560px; text-align:center;">
+      <button class="modal-close" aria-label="閉じる" onclick="closeReportModal()">&times;</button>
+      <div style="font-size:0.7rem;font-weight:900;letter-spacing:4px;color:#E01020;margin-bottom:20px;">REPORT</div>
+      <h2 class="pp-title" style="font-size:1.3rem;line-height:1.7;margin-bottom:16px;">世界観なきビジネスは、<br>なぜ選ばれないのか</h2>
+      <p style="font-size:0.85rem;color:#777;line-height:1.8;margin-bottom:32px;">売上不振の背景にある「世界観の不在」という視点。<br>経営・現場・顧客体験のズレが生む機会損失を整理します。</p>
+      <a href="report.html" target="_blank" style="display:inline-block;background:#E01020;color:#fff;font-weight:700;padding:16px 48px;border-radius:999px;font-size:0.95rem;letter-spacing:0.05em;margin-bottom:16px;">レポートを読む →</a>
+      <p style="font-size:0.75rem;color:#aaa;">新しいタブで開きます</p>
+    </div>
+  </div>
+
   <!-- SHARED HERO BACKDROP (full screen) -->
   <div class="hero-backdrop" id="heroBackdrop"></div>
 
@@ -1378,10 +1460,11 @@
       <section class="hero" id="hero">
         <div class="hero-copy">
           <h1>
-            <span class="hero-line hero-line1">ビジネスに</span>
-            <span class="hero-line hero-line2">世界観を。</span>
+            <span class="hero-line hero-line1">ビジネスは</span>
+            <span class="hero-line hero-line2">世界観が9割。</span>
           </h1>
           <a href="javascript:void(0)" class="hero-text-cta" onclick="openModal('https://wrld.asobiari.com/')">あなたのビジネスの世界観は？ →</a>
+          <a href="javascript:void(0)" class="hero-sub-report" onclick="openReportModal()">なぜ、世界観が売上を左右するのか。<span class="hero-sub-report-arrow">→ 読む</span></a>
         </div>
         <div class="scroll-hint">SCROLL</div>
       </section>
@@ -1390,9 +1473,9 @@
       <section class="fs problems" id="problems">
         <div class="fs-inner">
           <div class="reveal">
-            <p class="solution-eyebrow">PROBLEM</p>
+            <p class="solution-eyebrow">DANGER</p>
             <p class="problems-lead">あなたのビジネス<span class="kw">"らしさ"</span>に</p>
-            <h2 class="problems-title">こんなこと<span class="red">感じて</span>ませんか？</h2>
+            <h2 class="problems-title">こんなこと感じていたら<br><span class="red">赤信号！</span></h2>
           </div>
           <div class="problem-grid reveal" style="transition-delay:0.15s">
             <div class="problem-box">
@@ -1436,6 +1519,7 @@
               アニメやマンガ、ゲームのノウハウを活用して<br>
               あなたのビジネスの世界観をつくります。
             </p>
+            <a href="javascript:void(0)" class="benefit-report-link" onclick="openReportModal()">なぜ世界観で売上が変わるのか。詳しくはレポートで<span class="benefit-report-arrow">→</span></a>
           </div>
         </div>
       </section>
@@ -1460,6 +1544,10 @@
               <div class="benefit-step-word">愛される</div>
               <div class="benefit-step-desc">唯一無二の存在<br>として<br>ずっと応援され続ける。</div>
             </div>
+          </div>
+          <div class="reveal" style="transition-delay:0.3s; margin-top: 40px; padding: 32px 40px; border-top: 2px solid var(--red); text-align: center;">
+            <div class="benefit-step-word" style="color: var(--red); font-size: clamp(1.5rem, 3vw, 2.2rem);">売上不振から脱却できる。</div>
+            <div class="benefit-step-desc" style="margin-top: 12px;">施策が積み上がり、売上を支える土台ができあがる。</div>
           </div>
         </div>
       </section>
@@ -1808,6 +1896,21 @@
     }
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && seedOverlay.classList.contains('active')) closeSeedModal();
+    });
+
+    /* ---- REPORT MODAL ---- */
+    const reportModalOverlay = document.getElementById('reportModalOverlay');
+    function openReportModal() {
+      reportModalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeReportModal(e) {
+      if (e && e.target !== reportModalOverlay && !e.target.classList.contains('modal-close')) return;
+      reportModalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && reportModalOverlay.classList.contains('active')) closeReportModal();
     });
 
     /* ---- KEYBOARD ACCESSIBILITY for logo-flip ---- */

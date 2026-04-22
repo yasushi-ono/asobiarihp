@@ -467,7 +467,7 @@
 
     /* ===== ABOUT SUMMARY (before footer) ===== */
     .about-summary {
-      background: var(--bg-warm);
+      background: #fff;
       position: relative;
       z-index: 2;
       padding: 100px 48px;
@@ -1015,7 +1015,7 @@
     }
 
     /* ===== BACK: z-index for content over sticky hero ===== */
-    .seed-catalog, .make-seed, .story-section, .philosophy-section,
+    .seed-catalog, .make-seed, .story-section, .news-section, .philosophy-section,
     .back-company-wrap, .back-footer {
       position: relative;
       z-index: 2;
@@ -1038,7 +1038,7 @@
     /* ===== BACK: SEED CATALOG ===== */
     .seed-catalog {
       padding: 100px 48px;
-      background: var(--bg-warm);
+      background: #fff;
       text-align: center;
     }
     .seed-grid {
@@ -1115,7 +1115,7 @@
     /* ===== BACK: MAKE YOUR SEED ===== */
     .make-seed {
       padding: 100px 48px;
-      background: #fff;
+      background: var(--bg-warm);
       text-align: center;
     }
     .make-seed-body {
@@ -1129,7 +1129,7 @@
     /* ===== BACK: STORY ===== */
     .story-section {
       padding: 80px 48px;
-      background: var(--bg-warm);
+      background: #fff;
       text-align: center;
     }
     .story-card {
@@ -1185,10 +1185,55 @@
       top: -1px;
     }
 
+    /* ===== BACK: NEWS ===== */
+    .news-section {
+      padding: 80px 48px;
+      background: var(--bg-warm);
+      text-align: center;
+    }
+    .news-list {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .news-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .news-item:first-child { border-top: 1px solid #eee; }
+    .news-date {
+      flex-shrink: 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+    .news-tag {
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--red);
+      border: 1px solid var(--red);
+      border-radius: 4px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }
+    .news-title-text { color: var(--text-dark); }
+    a.news-title-text {
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a.news-title-text:hover { color: var(--red); }
+
     /* ===== BACK: PHILOSOPHY ===== */
     .philosophy-section {
       padding: 100px 48px;
-      background: #fff;
+      background: var(--bg-warm);
       text-align: center;
     }
     .vmp-grid {
@@ -1257,7 +1302,7 @@
       .hero-text-cta { display: inline-block; }
       .seed-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
       .vmp-grid { grid-template-columns: 1fr; gap: 0; }
-      .seed-catalog, .make-seed, .story-section, .philosophy-section,
+      .seed-catalog, .make-seed, .story-section, .news-section, .philosophy-section,
       .seed-intro { padding-left: 24px; padding-right: 24px; }
       .back-overlap { border-radius: 24px 24px 0 0; }
       .back-header { padding: 0 24px; }
@@ -1330,6 +1375,8 @@
       .make-seed-body { font-size: 0.95rem; }
       .story-section { padding: 48px 16px; }
       .story-card { padding: 32px 24px; }
+      .news-section { padding: 48px 16px; }
+      .news-item { flex-wrap: wrap; gap: 8px; }
       .philosophy-section { padding: 60px 16px; }
       .vmp-item { padding: 28px 16px; }
       .back-company-wrap { padding: 48px 16px; }
@@ -1602,6 +1649,7 @@
         <a href="#back-seeds">種をさがす</a>
         <a href="#back-make">種をつくる</a>
         <a href="#back-story">物語</a>
+        <a href="#back-news">お知らせ</a>
         <a href="#back-company">会社のこと</a>
       </nav>
       <div class="logo logo-flip" onclick="flipToFront()" role="button" tabindex="0" aria-label="サービスページに戻る">
@@ -1635,6 +1683,13 @@
           蒔いてみないとわからない。
         </p>
       </section>
+
+      <!-- NEWS -->
+      <div class="news-section" id="back-news">
+        <p class="back-section-eyebrow">NEWS</p>
+        <h2 class="back-section-title">お知らせ</h2>
+        <div class="news-list" id="newsList"></div>
+      </div>
 
       <!-- SEED CATALOG -->
       <div class="seed-catalog" id="back-seeds">
@@ -1923,6 +1978,23 @@
         }
       });
     });
+
+    /* ---- NEWS ---- */
+    /* ★ お知らせ更新はここを編集 ★ */
+    const NEWS_DATA = [
+      { date: "2026.04.22", tag: "お知らせ", title: "ホームページをリニューアルしました" },
+      { date: "2026.04.15", tag: "レポート", title: "「世界観なきビジネスは、なぜ選ばれないのか」公開", url: "report.html" }
+    ];
+    (function renderNews() {
+      const list = document.getElementById('newsList');
+      if (!list || !NEWS_DATA.length) return;
+      list.innerHTML = NEWS_DATA.map(item => {
+        const titleHtml = item.url
+          ? `<a class="news-title-text" href="${item.url}"${item.url.startsWith('http') ? ' target="_blank" rel="noopener"' : ''}>${item.title}</a>`
+          : `<span class="news-title-text">${item.title}</span>`;
+        return `<div class="news-item"><span class="news-date">${item.date}</span><span class="news-tag">${item.tag}</span>${titleHtml}</div>`;
+      }).join('');
+    })();
 
     /* ---- FLIP LOGIC ---- */
     const pageFront = document.getElementById('pageFront');

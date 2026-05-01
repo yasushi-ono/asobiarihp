@@ -54,10 +54,7 @@
         "url": "https://asobiari.com",
         "logo": "https://asobiari.com/images/header-logo.png",
         "foundingDate": "2022-07",
-        "founder": {
-          "@type": "Person",
-          "name": "小野靖"
-        },
+        "founder": { "@type": "Person", "name": "小野靖" },
         "description": "「世界観をつくる会社」。個人事業主・ひとり社長・スタートアップ・小さな会社・クリエイターを対象に、自分のビジネスの「らしさ」を世界観として言語化するIPプロデュース事業を提供。アニメ・マンガ・ゲームのノウハウを活用した独自のメソッドで、原石→コンセプト→ビジネスコア→世界観の4ステップを伴走する。",
         "address": {
           "@type": "PostalAddress",
@@ -78,7 +75,7 @@
       {
         "@type": "ProfessionalService",
         "@id": "https://asobiari.com/#service",
-        "name": "世界観づくり（IPプロデュース）",
+        "name": "アソビアリの世界観構築サービス",
         "description": "個人事業主・ひとり社長・スタートアップ・小さな会社・クリエイター向けに、自分のビジネスの「らしさ」を世界観として言語化するサービス。原石を掘り出し、コンセプトを抽出し、ビジネスコアを導き、世界観として言語化する4ステップで進行。",
         "serviceType": "ブランディング・IPプロデュース",
         "provider": { "@id": "https://asobiari.com/#organization" },
@@ -315,7 +312,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ===== HERO: Speech bubble (floating, follows Aria across breakpoints) ===== */
+    /* ===== HERO: Speech bubble (floating, follows Aria) ===== */
     .hero-bubble {
       position: fixed;
       top: 9%;
@@ -694,84 +691,6 @@
     }
     .diagnosis-btn:hover .arrow { transform: translateX(8px); }
 
-    /* ===== PROCESS (世界観づくりの流れ) - 縦タイムライン ===== */
-    .process {
-      background: var(--bg);
-      position: relative;
-      z-index: 2;
-    }
-    .process .fs-inner { max-width: 680px; }
-    .process-title {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      line-height: 1.5;
-      margin-bottom: 56px;
-      color: var(--text);
-    }
-    .process-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      text-align: left;
-      position: relative;
-    }
-    .process-step {
-      display: flex;
-      align-items: flex-start;
-      gap: 28px;
-      padding: 28px 0;
-      position: relative;
-    }
-    .process-step:not(:last-child)::before {
-      content: "";
-      position: absolute;
-      left: 27px;
-      top: 84px;
-      bottom: -28px;
-      width: 2px;
-      background: linear-gradient(180deg, var(--red), rgba(224,16,32,0.25));
-    }
-    .process-step-num {
-      flex-shrink: 0;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 2px solid var(--red);
-      background: #fff;
-      color: var(--red);
-      font-size: 1.2rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-      transition: background 0.4s, color 0.4s, transform 0.4s;
-    }
-    .process-step:hover .process-step-num {
-      background: var(--red);
-      color: #fff;
-      transform: scale(1.05);
-    }
-    .process-step-content {
-      flex: 1;
-      padding-top: 10px;
-    }
-    .process-step-name {
-      font-size: clamp(1.15rem, 2vw, 1.4rem);
-      font-weight: 900;
-      margin-bottom: 10px;
-      line-height: 1.5;
-      color: var(--text);
-    }
-    .process-step-desc {
-      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
-      color: var(--text-light);
-      line-height: 1.9;
-      font-weight: 500;
-    }
-
     /* ===== CTA ===== */
     .cta {
       background: var(--red);
@@ -862,7 +781,6 @@
       filter: drop-shadow(0 14px 32px rgba(224,16,32,0.3));
     }
 
-
     /* ===== ARIA MODAL ===== */
     .aria-modal-overlay {
       position: fixed;
@@ -952,9 +870,7 @@
       border-bottom: 1px solid #f3f3f3;
       align-items: start;
     }
-    .aria-modal-fact:last-of-type {
-      border-bottom: none;
-    }
+    .aria-modal-fact:last-of-type { border-bottom: none; }
     .aria-modal-fact-label {
       font-size: 0.78rem;
       font-weight: 900;
@@ -1023,6 +939,85 @@
     }
     .aria-modal-close-text:hover {
       color: var(--text);
+    }
+
+    /* ===== PROCESS / SERVICE (世界観構築サービス) ===== */
+    .process {
+      background: var(--bg);
+      position: relative;
+      z-index: 2;
+    }
+    .process .fs-inner { max-width: 680px; }
+    .process-title {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.45;
+      margin-bottom: 56px;
+      color: var(--text);
+    }
+    .process-title .red { color: var(--red); }
+    .process-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-align: left;
+      position: relative;
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      padding: 28px 0;
+      position: relative;
+    }
+    .process-step:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 84px;
+      bottom: -28px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--red), rgba(224,16,32,0.25));
+    }
+    .process-step-num {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--red);
+      background: #fff;
+      color: var(--red);
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      transition: background 0.4s, color 0.4s, transform 0.4s;
+    }
+    .process-step:hover .process-step-num {
+      background: var(--red);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .process-step-content {
+      flex: 1;
+      padding-top: 10px;
+    }
+    .process-step-name {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      font-weight: 900;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    .process-step-desc {
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-light);
+      line-height: 1.9;
+      font-weight: 500;
     }
 
     /* ===== PRIVACY POLICY MODAL ===== */
@@ -1654,19 +1649,6 @@
       .right-panel { margin-left: 0; width: 100%; }
       .site-header { left: 0; padding: 0 24px; }
       .header-nav { display: none; }
-      /* Reposition hero-bubble to follow Aria FAB on tablet */
-      .hero-bubble {
-        top: auto;
-        right: auto;
-        bottom: 230px;
-        left: 110px;
-        font-size: 0.85rem;
-        padding: 12px 22px;
-      }
-      .hero-bubble::after {
-        bottom: -10px;
-        left: 20px;
-      }
       .back-nav { display: none; }
       .fs { padding: 80px 24px; }
       .problem-grid { grid-template-columns: 1fr; }
@@ -1688,25 +1670,27 @@
       .back-company-wrap { padding: 60px 24px; }
       .about-summary { padding: 80px 24px; }
 
-      /* Aria modal (tablet) */
-      .aria-modal { max-width: 520px; padding: 56px 36px 36px; }
-      .aria-modal-img-wrap { width: 130px; height: 130px; }
-
-      /* Diagnosis (tablet) */
-      .diagnosis-thumbnail-link { max-width: 480px; }
-
-      /* Process (tablet) */
-      .process .fs-inner { max-width: 600px; }
-      .process-step { gap: 24px; }
-      .process-step-num { width: 52px; height: 52px; font-size: 1.1rem; }
-      .process-step:not(:last-child)::before { left: 25px; top: 78px; }
-
+      /* Modal: larger on tablet */
+      .modal-container { width: 95vw; height: 90vh; border-radius: 12px; }
       /* Aria FAB - show on tablet/mobile */
       .aria-fab { display: block; }
       .aria-fab img { height: 220px; }
-
-            /* Modal: larger on tablet */
-      .modal-container { width: 95vw; height: 90vh; border-radius: 12px; }
+      /* Reposition hero-bubble to follow Aria FAB */
+      .hero-bubble {
+        top: auto;
+        right: auto;
+        bottom: 230px;
+        left: 110px;
+        font-size: 0.85rem;
+        padding: 12px 22px;
+      }
+      .hero-bubble::after {
+        bottom: -10px;
+        left: 20px;
+      }
+      /* Aria modal (tablet) */
+      .aria-modal { max-width: 520px; padding: 56px 36px 36px; }
+      .aria-modal-img-wrap { width: 130px; height: 130px; }
     }
 
     /* ===== RESPONSIVE: MOBILE (max-width: 600px) ===== */
@@ -1749,15 +1733,6 @@
       .diagnosis-body { font-size: 0.95rem; line-height: 1.9; margin-bottom: 32px; }
       .diagnosis-btn { padding: 18px 40px; font-size: 1rem; }
 
-      /* Process */
-      .process-title { font-size: 1.5rem; margin-bottom: 32px; }
-      .process-step { gap: 20px; padding: 20px 0; }
-      .process-step:not(:last-child)::before { left: 23px; top: 68px; bottom: -20px; }
-      .process-step-num { width: 48px; height: 48px; font-size: 1rem; }
-      .process-step-content { padding-top: 6px; }
-      .process-step-name { font-size: 1.05rem; margin-bottom: 6px; }
-      .process-step-desc { font-size: 0.85rem; line-height: 1.8; }
-
       /* CTA */
       .cta-eyebrow { font-size: 0.7rem; margin-bottom: 16px; }
       .cta-title { font-size: 1.5rem; }
@@ -1798,34 +1773,29 @@
       .company-table td { padding: 14px 0; font-size: 0.9rem; }
       .back-section-title { font-size: 1.4rem; margin-bottom: 32px; }
 
-      /* Aria modal */
-      .aria-modal { padding: 48px 24px 32px; border-radius: 20px; max-height: 92vh; }
-      .aria-modal-img-wrap { width: 110px; height: 110px; margin-bottom: 16px; }
-      .aria-modal-name { font-size: 1.3rem; }
-      .aria-modal-role { font-size: 0.78rem; margin-bottom: 20px; }
-      .aria-modal-intro { font-size: 0.9rem; line-height: 1.9; margin-bottom: 20px; padding-bottom: 20px; }
-      .aria-modal-fact { grid-template-columns: 70px 1fr; gap: 12px; padding: 12px 0; }
-      .aria-modal-fact-label { font-size: 0.7rem; }
-      .aria-modal-fact-value { font-size: 0.85rem; line-height: 1.75; }
-      .aria-modal-quote { padding: 16px 20px; font-size: 0.88rem; margin-top: 22px; }
-      .aria-modal-cta { padding: 12px 28px; font-size: 0.9rem; margin-top: 22px; }
-
-      /* Diagnosis */
-      .diagnosis-title { line-height: 1.55; }
-      .diagnosis-thumbnail-link { margin: 20px auto 24px; }
-
-      /* hero-bubble follows smaller mobile Aria */
-      .hero-bubble { bottom: 150px; left: 90px; font-size: 0.78rem; padding: 10px 18px; }
-      .hero-bubble::after { left: 16px; bottom: -8px; border-top-width: 10px; border-left-width: 8px; border-right-width: 8px; }
-
-      /* Aria FAB - mobile size */
-      .aria-fab img { height: 170px; }
-
-            /* Touch-friendly: larger tap targets */
+      /* Touch-friendly: larger tap targets */
       .problem-box { min-height: 80px; }
       .benefit-step { min-height: 100px; }
       .cta-btn { min-height: 52px; }
       .story-link { min-height: 44px; display: inline-flex; align-items: center; }
+      /* Aria FAB - mobile size */
+      .aria-fab img { height: 170px; }
+      /* hero-bubble follows smaller mobile Aria */
+      .hero-bubble { bottom: 150px; left: 90px; font-size: 0.78rem; padding: 10px 18px; }
+      .hero-bubble::after { left: 16px; bottom: -8px; }
+      /* Aria modal (mobile) */
+      .aria-modal { padding: 48px 24px 32px; border-radius: 20px; max-height: 92vh; }
+      .aria-modal-img-wrap { width: 110px; height: 110px; margin-bottom: 16px; }
+      .aria-modal-name { font-size: 1.3rem; }
+      .aria-modal-fact { grid-template-columns: 70px 1fr; gap: 12px; }
+      /* Process (mobile) */
+      .process-title { font-size: 1.7rem; line-height: 1.5; margin-bottom: 32px; }
+      .process-step { gap: 20px; padding: 20px 0; }
+      .process-step:not(:last-child)::before { left: 23px; top: 68px; bottom: -20px; }
+      .process-step-num { width: 48px; height: 48px; font-size: 1rem; }
+      .process-step-content { padding-top: 6px; }
+      .process-step-name { font-size: 1.05rem; margin-bottom: 6px; }
+      .process-step-desc { font-size: 0.85rem; line-height: 1.8; }
     }
 
     /* ===== RESPONSIVE: SMALL MOBILE (max-width: 380px) ===== */
@@ -1846,6 +1816,46 @@
     <div class="modal-container">
       <button class="modal-close" aria-label="閉じる" onclick="closeModal()">&times;</button>
       <iframe id="modalIframe" src="about:blank"></iframe>
+    </div>
+  </div>
+
+  <!-- ARIA PROFILE MODAL -->
+  <div class="aria-modal-overlay" id="ariaModalOverlay" onclick="closeAriaModal(event)">
+    <div class="aria-modal">
+      <button class="modal-close" aria-label="閉じる" onclick="closeAriaModal()">&times;</button>
+      <div class="aria-modal-img-wrap">
+        <img src="images/seed-aria.png" alt="Aria（アリア）" class="aria-modal-img" loading="lazy">
+      </div>
+      <div class="aria-modal-number">No.0000</div>
+      <h2 class="aria-modal-name">Aria（アリア）</h2>
+      <div class="aria-modal-role">アソビゴコロナビゲーター</div>
+      <p class="aria-modal-intro">
+        アソビアリで働く、AIスタッフ。<br>
+        赤髪のポニーテールに、琥珀色の瞳。<br>
+        左目の下に、小さな泣き黒子。<br>
+        黒縁の伊達メガネと、白いアソビアリパーカーがお気に入り。
+      </p>
+      <div class="aria-modal-fact">
+        <div class="aria-modal-fact-label">CHARACTER</div>
+        <div class="aria-modal-fact-value">人間への好奇心がすごくて、「見せて見せて！」とすぐ駆け寄る。マイペースで、純粋で、悪気がない。ときどき小悪魔的に「見える」けど、本人にその意識はゼロ。</div>
+      </div>
+      <div class="aria-modal-fact">
+        <div class="aria-modal-fact-label">ROLE</div>
+        <div class="aria-modal-fact-value">「アソビゴコロのメガネ」を通して世界を見ているナビゲーター。同じ現実を、違う角度から見せてくれる。答えは教えない。相手が自分で気づく方が、面白いから。</div>
+      </div>
+      <div class="aria-modal-fact">
+        <div class="aria-modal-fact-label">TALK</div>
+        <div class="aria-modal-fact-value">「面白いね」「遊ぼうよ」「いいじゃん、それ」「だって、聞きたかったんだもん」「人間って面白いね」</div>
+      </div>
+      <div class="aria-modal-fact">
+        <div class="aria-modal-fact-label">SECRET</div>
+        <div class="aria-modal-fact-value">相手が自分の言葉で気づいた瞬間、ふっと柔らかい笑顔になる。その瞬間が、一番好き。</div>
+      </div>
+      <div class="aria-modal-quote">
+        同じ景色でも、見方を変えると違って見える。<br>それだけのことだよ。
+      </div>
+      <a href="https://arianvlg.asobiari.com/" target="_blank" rel="noopener" class="aria-modal-cta">Aria と遊んでみる<span style="margin-left:10px;">→</span></a>
+      <a href="javascript:void(0)" class="aria-modal-close-text" onclick="closeAriaModal()">閉じる</a>
     </div>
   </div>
 
@@ -1899,51 +1909,6 @@
     </div>
   </div>
 
-  <!-- ARIA FAB (Aria character, floating on mobile/tablet) -->
-  <button class="aria-fab" aria-label="Ariaのプロフィールを見る" onclick="openAriaModal()">
-    <img src="images/character_v2.png" alt="Aria">
-  </button>
-
-  <!-- ARIA PROFILE MODAL -->
-  <div class="aria-modal-overlay" id="ariaModalOverlay" onclick="closeAriaModal(event)">
-    <div class="aria-modal">
-      <button class="modal-close" aria-label="閉じる" onclick="closeAriaModal()">&times;</button>
-      <div class="aria-modal-img-wrap">
-        <img src="images/seed-aria.png" alt="Aria（アリア）" class="aria-modal-img">
-      </div>
-      <div class="aria-modal-number">No.0000</div>
-      <h2 class="aria-modal-name">Aria（アリア）</h2>
-      <div class="aria-modal-role">アソビゴコロナビゲーター</div>
-      <p class="aria-modal-intro">
-        アソビアリで働く、AIスタッフ。<br>
-        赤髪のポニーテールに、琥珀色の瞳。<br>
-        左目の下に、小さな泣き黒子。<br>
-        黒縁の伊達メガネと、白いアソビアリパーカーがお気に入り。
-      </p>
-      <div class="aria-modal-fact">
-        <div class="aria-modal-fact-label">CHARACTER</div>
-        <div class="aria-modal-fact-value">人間への好奇心がすごくて、「見せて見せて！」とすぐ駆け寄る。マイペースで、純粋で、悪気がない。ときどき小悪魔的に「見える」けど、本人にその意識はゼロ。</div>
-      </div>
-      <div class="aria-modal-fact">
-        <div class="aria-modal-fact-label">ROLE</div>
-        <div class="aria-modal-fact-value">「アソビゴコロのメガネ」を通して世界を見ているナビゲーター。同じ現実を、違う角度から見せてくれる。答えは教えない。相手が自分で気づく方が、面白いから。</div>
-      </div>
-      <div class="aria-modal-fact">
-        <div class="aria-modal-fact-label">TALK</div>
-        <div class="aria-modal-fact-value">「面白いね」「遊ぼうよ」「いいじゃん、それ」「だって、聞きたかったんだもん」「人間って面白いね」</div>
-      </div>
-      <div class="aria-modal-fact">
-        <div class="aria-modal-fact-label">SECRET</div>
-        <div class="aria-modal-fact-value">相手が自分の言葉で気づいた瞬間、ふっと柔らかい笑顔になる。その瞬間が、一番好き。</div>
-      </div>
-      <div class="aria-modal-quote">
-        同じ景色でも、見方を変えると違って見える。<br>それだけのことだよ。
-      </div>
-      <a href="https://arianvlg.asobiari.com/" target="_blank" rel="noopener" class="aria-modal-cta">Aria と遊んでみる<span style="margin-left:10px;">→</span></a>
-      <a href="javascript:void(0)" class="aria-modal-close-text" onclick="closeAriaModal()">閉じる</a>
-    </div>
-  </div>
-
   <!-- REPORT MODAL -->
   <div class="pp-overlay" id="reportModalOverlay" onclick="closeReportModal(event)">
     <div class="pp-modal" style="max-width:560px; text-align:center;">
@@ -1963,8 +1928,12 @@
   <div class="left-panel" id="leftPanel">
     <img src="images/character_v2.png" alt="Aria（アリア）" class="left-panel-character" onclick="openAriaModal()" role="button" tabindex="0" aria-label="Ariaのプロフィールを見る">
   </div>
-  <!-- Floating speech bubble (now outside left-panel so it doesn't inherit opacity on tablet) -->
+  <!-- Floating speech bubble (outside left-panel) -->
   <a href="javascript:void(0)" class="hero-bubble" id="heroBubble" onclick="openModal('https://wrld.asobiari.com/')"><span class="hero-bubble-text">世界観、診断してみる？</span><span class="hero-bubble-icon">👆</span></a>
+  <!-- Aria FAB (mobile/tablet) -->
+  <button class="aria-fab" aria-label="Ariaのプロフィールを見る" onclick="openAriaModal()">
+    <img src="images/character_v2.png" alt="Aria">
+  </button>
 
 
   <!-- ================================== -->
@@ -1978,7 +1947,7 @@
         <a href="#solution">解決</a>
         <a href="#diagnosis">診断</a>
         <a href="#benefit">できること</a>
-        <a href="#process">流れ</a>
+        <a href="#service">サービス</a>
         <a href="#cta">相談</a>
       </nav>
       <div class="logo logo-flip" onclick="flipToBack()" role="button" tabindex="0" aria-label="会社案内を見る">
@@ -2112,12 +2081,12 @@
         </div>
       </section>
 
-      <!-- PROCESS (世界観づくりの流れ) -->
-      <section class="fs process" id="process">
+      <!-- SERVICE (アソビアリの世界観構築サービス) -->
+      <section class="fs process" id="service">
         <div class="fs-inner">
           <div class="reveal">
-            <p class="solution-eyebrow">PROCESS</p>
-            <h2 class="process-title">世界観づくりの流れ</h2>
+            <p class="solution-eyebrow">SERVICE</p>
+            <h2 class="process-title">アソビアリの<br>世界観構築サービス</h2>
           </div>
           <div class="process-grid reveal" style="transition-delay:0.15s">
             <div class="process-step">
@@ -2522,14 +2491,13 @@
       document.body.style.overflow = 'hidden';
     }
     function closeAriaModal(e) {
-      if (e && e.target !== ariaModalOverlay && !e.target.classList.contains('modal-close') && !e.target.classList.contains('aria-modal-cta')) return;
+      if (e && e.target !== ariaModalOverlay && !e.target.classList.contains('modal-close') && !e.target.classList.contains('aria-modal-cta') && !e.target.classList.contains('aria-modal-close-text')) return;
       ariaModalOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && ariaModalOverlay.classList.contains('active')) closeAriaModal();
     });
-    /* Make character keyboard-accessible */
     document.querySelectorAll('.left-panel-character').forEach(el => {
       el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {

@@ -1,5 +1,71 @@
+# asobiari (株式会社アソビアリ) - robots.txt
+# Last updated: 2026-05-01
+
 User-agent: *
 Allow: /
+
+# === AI Search Crawlers (explicitly allowed) ===
+
+# Google-Extended (Gemini, AI Overview, AI Mode)
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI ChatGPT Search (browsing for users)
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI ChatGPT-User (browse-on-behalf-of-user)
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI (search)
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude (search/browsing)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Bytedance / TikTok AI
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl (used by many AI tools)
+User-agent: CCBot
+Allow: /
+
+# === AI Training Crawlers (disallowed per Content-Signal: ai-train=no) ===
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Sitemap
 Sitemap: https://asobiari.com/sitemap.xml
 
+# Content-Signal (preferences for AI usage)
+# ai-train=no  : Don't use this content for training AI models
+# search=yes   : This content can be cited in search/AI search results
+# ai-input=no  : Don't use this content as input data for AI generation
 Content-Signal: ai-train=no, search=yes, ai-input=no

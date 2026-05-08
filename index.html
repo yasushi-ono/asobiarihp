@@ -97,7 +97,7 @@
       "@type": "ProfessionalService",
       "@id": "https://asobiari.com/#service",
       "name": "アソビアリの世界観構築サービス",
-      "description": "個人事業主・ひとり社長・スタートアップ・小さな会社・クリエイター向けに、自分のビジネスの「らしさ」を世界観として言語化するサービス。原石を掘り出し、コンセプトを抽出し、ビジネスコアを導き、世界観として言語化する4ステップで進行。",
+      "description": "個人事業主・ひとり社長・スタートアップ・小さな会社・クリエイター向けに、自分のビジネスの「らしさ」を世界観として言語化するサービス。原石を掘り出し、コンセプトを抽出し、ビジネスコアを導き、世界観として言語化し、ビジネスが変わるまで伴走する5ステップで進行。",
       "serviceType": "ブランディング・IPプロデュース",
       "provider": {
         "@id": "https://asobiari.com/#organization"
@@ -215,6 +215,13 @@
           "position": 4,
           "name": "世界観として言語化する",
           "text": "ビジネスコアを、世界観として言葉に結晶化する。",
+          "url": "https://asobiari.com/#service"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "ビジネスが変わるまで、伴走する",
+          "text": "世界観が定着し、ビジネスが変わっていく瞬間まで、ともに走り続ける。",
           "url": "https://asobiari.com/#service"
         }
       ]
@@ -738,6 +745,17 @@
       font-weight: 900;
       transition: color 0.3s ease;
     }
+
+    .solution-tagline {
+      margin-top: 0;
+      margin-bottom: 32px;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+    .solution-tagline .red { color: var(--red); }
 
     /* ===== DIAGNOSIS (世界観診断) ===== */
     .diagnosis {
@@ -2193,6 +2211,9 @@
         <div class="fs-inner">
           <div class="reveal">
             <p class="solution-eyebrow">SOLUTION</p>
+            <p class="solution-tagline">
+              世界観をつくり、<span class="red">ビジネスを変える</span>。
+            </p>
             <h2 class="solution-headline">
               その悩みを解決するのは<br>
               あなただけの<br>
@@ -2296,6 +2317,13 @@
               <div class="process-step-content">
                 <div class="process-step-name">世界観として言語化する</div>
                 <div class="process-step-desc">ビジネスコアを、世界観として言葉に結晶化する。</div>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-num">05</div>
+              <div class="process-step-content">
+                <div class="process-step-name">ビジネスが変わるまで、伴走する</div>
+                <div class="process-step-desc">世界観が定着し、ビジネスが変わっていく瞬間まで、ともに走り続ける。</div>
               </div>
             </div>
           </div>
